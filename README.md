@@ -85,3 +85,9 @@
 |Cofnij		|wyświetlenie strony Lista uczniów	|
 |Usuń		|usunięcie ucznia			|
 |Edytuj		|edycja ucznia				|
+
+![Schemat bazy danych wersja uposzczona](/docs/img/dbSchema_v1.jpg "Schemat BD v. 1")
+
+![Schemat bazy danych wersja rozszerzona](/docs/img/dbSchema_v2.jpg "Schemat BD v. 2")
+
+![Mockup zarządzania uczniam](/docs/img/mockup.jpg "Mockup zarządzania uczniami")
