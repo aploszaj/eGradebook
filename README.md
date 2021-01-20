@@ -15,7 +15,7 @@
 **Then:** wyświetla się formatka Dane ucznia\
 **When:** wpisuję w pole Nazwisko nazwisko ucznia\
 **And:** wpisuję w pole Imię imię ucznia\
-**And:** klikam <przycisk>\ 
+**And:** klikam <przycisk>
 
 #### **Examples:**
 
