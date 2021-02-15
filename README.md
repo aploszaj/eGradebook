@@ -1,93 +1,111 @@
-## **Feature:** Wyświtlenie listy uczniów
-### **Scenario:** jako nauczyciel (wychowawca) chcę wyświetlić listę uczniów
+#  **Wymagania**
 
-**Given:** jestem na stronie Lista uczniów\
-**Then:** wyświetla się lista dodanych uczniów\
-**And:** obok danych każdego ucznia pojawia się przycisk Szczegóły
+## **Feature:** Usunięcie ucznia z listy
+
+**Given:** Nauczyciel jest na stronie swoich uczniów\
+**When:** klikam przycisk Zarządzaj uczniami\ 
+**And** klikam przycisk Usuń\
+**Then:** uczeń zostaje usunięty z list
 
 --------------------------------------------------------------------
 
 ## **Feature:** Dodanie ucznia do listy
-### **Scenario:**  jako nauczyciel (wychowawca) chcę dodać ucznia do listy
 
-**Given:** jestem na stronie Lista uczniów\
-**When:** klikam przycisk Dodaj ucznia\
-**Then:** wyświetla się formatka Dane ucznia\
-**When:** wpisuję w pole Nazwisko nazwisko ucznia\
-**And:** wpisuję w pole Imię imię ucznia\
-**And:** klikam <przycisk>
-
-#### **Examples:**
-
-|    PRZYCISK	 |	    OPERACJA		|
-|:--------------:|:----------------------------:|
-|Zatwierdź	 |dodanie ucznia do listy	|
-|Anuluj		 |brak dodania ucznia do listy	|
-
-**Then:** formatka zamyka się\
-**And:** wyświetla się strona Lista uczniów
+**Given:** Nauczyciel jest na stronie swoich uczniów\
+**When:** klikam przycisk Zarządzaj uczniami\ 
+**And:** klikam przycisk Dodaj ucznia\
+**And** wypełniam dane
+**Then:** uczeń zostaje dodany do list
 
 --------------------------------------------------------------------
 
-## **Features:** Edycja ucznia
-### **Scenario:** jako nauczyciel (wychowawca) chcę edytować dane ucznia
+## **Feature:** Edycja ucznia
 
-**Given:** jestem na stronie Lista uczniów\
-**When:** klikam przycisk Szczegóły obok danych ucznia, którego chcę edytować\
-**Then:** wyświetla się formatka Szczegóły\
-**When:** klikam przycisk Edytuj\
-**Then:** wyświetla się formatka Edytuj ucznia z danymi ucznia do edycji\
-**When:** klikam <przycisk>
-
-#### **Examples:** 
-
-|   PRZYCISK	| 	    OPERACJA		|
-|:-------------:|:-----------------------------:|
-|Zatwierdź	|zapisanie zmian dla ucznia	|
-|Anuluj		|porzucenie zmian dla ucznia	|
-
-**Then:** wyświetla się formatka Szczegóły
-
-
-## **Feature:** Usunięcie ucznia
-### **Scenario:**  jako nauczyciel (wychowawca) chcę usunąć ucznia z listy
-
-**Given:** jestem na stronie Lista uczniów\
-**When:** klikam przycisk Szczegóły obok danych ucznia, którego chcę usunąć\
-**Then:** wyświetla się formatka Szczegóły\
-**When:** klikam Usuń\
-**Then:** wyświetla się komunikat „Czy na pewno chcesz usunąć ucznia?” posiadający dwa <przyciski>
-
-#### **Examples**
-
-|   PRZYCISK	|		OPERACJA		|
-|:-------------:|:-------------------------------------:|
-|Ok		|uczeń zostaje usunięty z listy		|
-|Anuluj		|uczeń nie zostaje usunięty z listy	|
-
-
-**Than:** zamyka się formatka z komunikatem
+**Given:** Nauczyciel jest na stronie swoich uczniów\
+**When:** klikam przycisk Zarządzaj uczniami\ 
+**And:** klikam przycisk Edytuj\
+**And** zmienię dane ucznia
+**Then** dane ucznia zostają zmienione
 
 --------------------------------------------------------------------
 
-## **Feature:** Wyświetlenie szczegółów
-### **Scenario:** jako nauczyciel (wychowawca) chcę wyświetlić szczegóły dotyczące danego ucznia
+## **Feature:** Wyświetlenie danych ucznia
 
-**Given:** jestem na stronie Lista uczniów\
-**When:** klikam przycisk Szczegóły\
-**Then:** wyświetla się formatka Szczegóły\
-**When:** kliknę <przycisk>
+**Given:** Nauczyciel jest na stronie swoich uczniów\
+**When:** klikam przycisk Zarządzaj uczniami\ 
+**And:** klikam przycisk Dane ucznia\
+**Then:** dane ucznia zostają wyświetlone
 
-#### **Examples:**
+--------------------------------------------------------------------
 
-|   PRZYCISK	|		OPERACJA		|
-|:------------: |:-------------------------------------:|
-|Cofnij		|wyświetlenie strony Lista uczniów	|
-|Usuń		|usunięcie ucznia			|
-|Edytuj		|edycja ucznia				|
+## **Feature:** Usunięcie oceny
 
-![Schemat bazy danych wersja uposzczona](/docs/img/dbSchema_v1.jpg "Schemat BD v. 1")
+**Given:** Nauczyciel jest na stronie klasy, którą uczy\
+**When:** klikam na ocenę\
+**And** klikam Usuń\
+**Then:** ocena zostaje usunięta
 
-![Schemat bazy danych wersja rozszerzona](/docs/img/dbSchema_v2.jpg "Schemat BD v. 2")
+--------------------------------------------------------------------
 
-![Mockup zarządzania uczniam](/docs/img/mockup.jpg "Mockup zarządzania uczniami")
+## **Feature:** Edycja oceny
+
+**Given:** Nauczyciel jest na stronie klasy, którą uczy\
+**When:** klikam na ocenę\
+**And** klikam Edytuj\
+**And** wybieram inną ocenę\
+**Then:** ocena zostaje zmieniona
+
+--------------------------------------------------------------------
+
+## **Feature:** Dodanie oceny
+
+**Given:** Nauczyciel jest na stronie klasy, którą uczy\
+**When:** klikam na kolumnę\
+**And** klikam rozwijaną listę\
+**And** wybiorę ocenę\
+**Then:** ocena zostaje dodana
+
+--------------------------------------------------------------------
+
+## **Feature:** Dodanie grupy ocen
+
+**Given:** Nauczyciel jest na stronie klasy, którą uczy\
+**When:** klikam przycisk Grupy ocen\
+**And** klikam przycisk Dodaj\
+**And** wypełnię pola\
+**Then:** grupa ocen zostaje dodana
+
+--------------------------------------------------------------------
+
+## **Feature:** Usunięcie grupy ocen
+
+**Given:** Nauczyciel jest na stronie klasy, którą uczy\
+**When:** klikam przycisk Grupy ocen\
+**And:** klikam przycisk Usuń\
+**Then:** grupa ocen zostaje usunięta
+
+--------------------------------------------------------------------
+
+## **Feature:** Edycja grupy ocen
+
+**Given:** Nauczyciel jest na stronie klasy, którą uczy\
+**When:** klikam przycisk Grupy ocen\
+**And** klikam przycisk Edytuj\
+**And** zmienię dane w polach\
+**Then:** grupa ocen zostaje zmieniona
+
+
+--------------------------------------------------------------------
+
+# **Mockupy**
+
+![Mockup zarządzania uczniam](/docs/img/mockub_zarzadzanie_uczniami.jpg "Mockup zarządzania uczniami")
+![Mockup oceny](/docs/img/mockup_oceny.jpg "Mockup dodawania ocen przez nauczyciela przedmiotowego")
+![Mockup oceny_wychowawca](/docs/img/mockup_oceny_wychowawca.jpg "Mockup dodawania ocen przez nauczyciela wychowawcę")
+
+
+--------------------------------------------------------------------
+
+# **Projektowanie bazy**
+
+![Schemat bazy danych](/docs/img/dbSchema_v3.jpg "Schemat BD v. 3")
