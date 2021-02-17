@@ -97,6 +97,12 @@
 
 --------------------------------------------------------------------
 
+# **Wyświetlenie zawartości bazy w przeglądarce**
+**Krok 1.** Uruchomić aplikację\
+**Krok 2.** Wpisać w przeglądarce adres: Localhost:8080/console
+
+--------------------------------------------------------------------
+
 # **Mockupy**
 
 ![Mockup zarządzania uczniam](/docs/img/mockub_zarzadzanie_uczniami.jpg "Mockup zarządzania uczniami")
