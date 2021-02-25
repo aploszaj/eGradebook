@@ -1,0 +1,42 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+    <changeSet id="8" author="aploszaj">
+        <createTable tableName="teacher_class_subject">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_class" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="id_subject" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="id_teacher" type="int">
+                <constraints nullable="false" />
+            </column>
+
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="id_class"
+                                 baseTableName="teacher_class_subject"
+                                 constraintName="fk_teacher_class_subject_class_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="class"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_subject"
+                                 baseTableName="teacher_class_subject"
+                                 constraintName="fk_teacher_class_subject_subject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="subject"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_teacher"
+                                 baseTableName="teacher_class_subject"
+                                 constraintName="fk_teacher_class_subject_teacher_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="teacher"/>
+    </changeSet>
+</databaseChangeLog>

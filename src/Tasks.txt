@@ -1,0 +1,31 @@
+pre-requisites
+zmerguj zmiany do mastera
+stwórz nowy projekt spring-boot korzystając z https://start.spring.io/ (maven czy gradle bez znaczenia)
+dodaj zależności jak: Spring Web, Spring Data JPA, Liquibase Migration, H2 Database,
+opcjonalnie: Spring Boot DevTools (to Ci usprawni pracę), Lombok (to może Ci zredukować ilość kodu)
+
+krok 1
+Skonfiguruj aplikację tak aby wykorzystywała jako bazę H2 (dlatego H2 bo nie trzeba niczego instalować i będę mógł łatwo przetestować twoją aplikację u siebie)
+Baza ma się zapisywać lokalnie ~/eGradebook
+wykmiń jak połączyć po www do bazy
+
+krok 2
+schemat w bazie stworzymy przez liquibase (dzięki temu rozwiązaniu
+poczytaj ogólnie co to jest i dowiedz się jak to skonfigurować w spring-boocie
+chcemy używać format xml https://docs.liquibase.com/concepts/basic/xml-format.html
+
+Teraz schemat bazy możesz zbudować przy użyciu liquibase na 2 sposoby
+1. pisząc plik sql i w pliku liquibase zaczytać go przy użyciu https://docs.liquibase.com/change-types/community/sql-file.html
+2. używać natywnej składni liquibase (było by super pro jeśli wybierzesz to rozwiązanie) https://docs.liquibase.com/change-types/community/home.html
+zostawiam Tobie podjęcie decyzji czy podążasz sposobem 1 czy 2 ;)
+
+krok 3
+Stwórz encje za pomocą JPA
+W głównej klasie (np. demo\src\main\java\com\example\demo\DemoApplication.java)
+1. utwórz jakieś obiekty i zapisz je w bazie przy pomocy encji
+2. w drugiej metodzie zaczytaj i wyświetl dane z bazy zapisane w poprzednim kroku
+3. usuń obiekt z bazy
+Dla każdego kroku używaj loggerów (e.g. log4j) aby wyświetlić w logach/konsoli co się dzieje (np. pokaże nam to, że gdy obiekt się zapisze to dostanie wygenerowany id)
+
+
+

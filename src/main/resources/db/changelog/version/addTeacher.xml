@@ -1,0 +1,50 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+    <changeSet id="4" author="aploszaj">
+        <createTable tableName="teacher">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="middle-name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_of_birth" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pesel" type="varchar(11)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="street" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="house_nr" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="apartment_nr" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="ZIP_code" type="varchar(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_nr" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="e-mail" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

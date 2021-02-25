@@ -1,0 +1,31 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+    <changeSet id="7" author="aploszaj">
+        <createTable tableName="student_class">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_class" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="id_student" type="int">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="id_class"
+                                 baseTableName="student_class"
+                                 constraintName="fk_student_class_class_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="class"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_student"
+                                 baseTableName="student_class"
+                                 constraintName="fk_student_class_student_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="student"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,61 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+    <changeSet id="5" author="aploszaj">
+        <createTable tableName="grade">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="grade" type="float">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_subject" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_student" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_teacher" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_class" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="id_subject"
+                                 baseTableName="grade"
+                                 constraintName="fk_grade_subject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="subject"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_student"
+                                 baseTableName="grade"
+                                 constraintName="fk_grade_student_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="student"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_teacher"
+                                 baseTableName="grade"
+                                 constraintName="fk_grade_teacher_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="teacher"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_class"
+                                 baseTableName="grade"
+                                 constraintName="fk_grade_class_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="class"/>
+
+
+    </changeSet>
+</databaseChangeLog>
